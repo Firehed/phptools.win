@@ -96,7 +96,7 @@ const tbody = document.createElement('tbody')
 features.forEach(feature => {
 
     // blah
-    const versionInfo = versions.map(version => feature.version >= version ? 'Y' : '')
+    const versionInfo = versions.map(version => version >= feature.version ? 'Y' : '')
 
     // TODO: comma separation
     const links = document.createElement('p')
