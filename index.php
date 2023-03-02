@@ -33,8 +33,6 @@ readonly class Feature
     }
 }
 
-echo $foo;
-
 // header('Content-type: text/plain');
 
 $fh = fopen('matrix.csv', 'r');
