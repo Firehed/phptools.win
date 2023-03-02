@@ -73,7 +73,7 @@
   docs: []
   categories:
   - Type System
-- name: "\u2018[$a, $b] = $array"
+- name: "[$a, $b] = $array"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/short_list_syntax
   docs: []
@@ -279,7 +279,7 @@
   docs: []
   categories:
   - Type System
-- name: "\u2018$someObject::class (= get_class)"
+- name: $someObject::class (= get_class)
   version: "8.0"
   rfc: https://wiki.php.net/rfc/class_name_literal_on_object
   docs: []
@@ -445,13 +445,13 @@
   docs: []
   categories:
   - Type System+BC
-- name: '#[SensitiveParameters]'
+- name: '#[SensitiveParameters] attribute'
   version: "8.2"
   rfc: https://wiki.php.net/rfc/redact_parameters_in_back_traces
   docs: []
   categories:
   - New Attribute
-- name: '[AllowDynamicProperties]'
+- name: '#[AllowDynamicProperties] attribute'
   version: "8.2"
   rfc: https://wiki.php.net/rfc/deprecate_dynamic_properties
   docs: []
