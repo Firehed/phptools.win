@@ -16,31 +16,25 @@ readonly class Feature
 {
     public function __construct(
         public Version $version,
-        // category
+        public array $categories,
         public string $name,
         public string $rfc,
-        public string $docs,
+        public array $docs,
     ) {
     }
 }
 
-// header('Content-type: text/plain');
+$parsed = yaml_parse_file('data.yaml');
 
-$fh = fopen('matrix.csv', 'r');
-// skip headers, skip blanks
-$features = [];
-while ($row = fgetcsv($fh)) {
-    [$name, $versionStr, $category, $rfc, $docs, $notes] = $row;
-    if ($version = Version::tryFrom($versionStr)) {
-        $features[] = new Feature(
-            version: $version,
-            name: $name,
-            rfc: $rfc,
-            docs: $docs,
-        );
-    }
-}
-
+$features = array_map(function ($row) {
+    return new Feature(
+        version: Version::from($row['version']),
+        categories: $row['categories'],
+        name: $row['name'],
+        rfc: $row['rfc'],
+        docs: $row['docs'],
+    );
+}, $parsed);
 ?>
 <!doctype HTML>
 <html>
@@ -224,14 +218,15 @@ features.forEach(feature => {
         link.target = '_blank'
         links.appendChild(link)
     }
-    if (feature.docs !== '') {
+
+    feature.docs.forEach(docLink => {
         const link = document.createElement('a')
         link.innerText = 'Docs ↗️'
-        link.href = feature.docs
+        link.href = docLink,
         link.rel = 'noopener nofollow'
         link.target = '_blank'
         links.appendChild(link)
-    }
+    })
 
     const row = makeRow([feature.name, links, ...versionInfo])
     tbody.appendChild(row)
