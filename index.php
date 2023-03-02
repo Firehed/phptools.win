@@ -1,5 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
+error_reporting(-1);
+set_error_handler(function (int $severity, string $message, string $file, int $line): bool {
+    if (error_reporting() & $severity !== 0) {
+        throw new \ErrorException($message, 0, $severity, $file, $line);
+    }
+    return false;
+});
 enum Version: string
 {
     case v7_0 = '7.0';
