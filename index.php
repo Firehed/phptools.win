@@ -35,7 +35,7 @@ readonly class Feature
 
 $buildVersion = getenv('GITHUB_SHA');
 $buildFooter = $buildVersion
-    ? "<footer>Build version <a href=\"https://github.com/Firehed/phptools.win/commit/$buildVersion\"><code>$buildVersion</code></a></footer>"
+    ? "<footer>Build version <a href=\"https://github.com/Firehed/phptools.win/commit/$buildVersion\" target=\"_blank\"><code>$buildVersion</code></a></footer>"
     : '';
 
 $parsed = yaml_parse_file('data.yaml');
