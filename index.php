@@ -51,8 +51,16 @@ while ($row = fgetcsv($fh)) {
           margin: 0;
           padding: 0;
         }
+        table thead th {
+          padding: 0 0.5em;
+        }
+        /* zebra-stripe the table */
         table tr:nth-child(even) {
           background-color: #EEE;
+        }
+        /* center the table */
+        #root > table {
+            margin: 0 auto;
         }
 
         /*!
@@ -160,7 +168,8 @@ while ($row = fgetcsv($fh)) {
 
     <body>
         <a class="github-fork-ribbon" href="https://www.github.com/Firehed/phptools.win" data-ribbon="Edit me on GitHub" title="Edit me on GitHub" target="_blank">Edit me on GitHub</a>
-        <div id="root" />
+        <div id="root"></div>
+        <footer>This site is not affiliated with PHP.net or The PHP Group</footer>
         <script type="text/javascript">
 const features = <?=json_encode($features)?>
 // https://www.php.net/manual/en/migration70.new-features.php
