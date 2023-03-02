@@ -50,9 +50,11 @@ while ($row = fgetcsv($fh)) {
         * { margin: 0; padding: 0; }
         table tr:nth-child(even) { background-color: #EEE; }
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
     </head>
 
     <body>
+        <a class="github-fork-ribbon" href="https://www.github.com/Firehed/phptools.win" data-ribbon="Edit me on GitHub" title="Edit me on GitHub">Edit me on GitHub</a>
         <div id="root" />
         <script type="text/javascript">
 const features = <?=json_encode($features)?>
