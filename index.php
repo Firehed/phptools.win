@@ -33,6 +33,11 @@ readonly class Feature
     }
 }
 
+$buildVersion = getenv('GITHUB_SHA');
+$buildFooter = $buildVersion
+    ? "<footer>Build version <a href=\"https://github.com/Firehed/phptools.win/commit/$buildVersion\"><code>$buildVersion</code></a></footer>"
+    : '';
+
 $parsed = yaml_parse_file('data.yaml');
 
 $features = array_map(function ($row) {
@@ -173,6 +178,7 @@ $features = array_map(function ($row) {
         <a class="github-fork-ribbon" href="https://www.github.com/Firehed/phptools.win" data-ribbon="Edit me on GitHub" title="Edit me on GitHub" target="_blank">Edit me on GitHub</a>
         <div id="root"></div>
         <footer>This site is not affiliated with PHP.net or The PHP Group</footer>
+        <?=$buildFooter?>
         <script type="text/javascript">
 const features = <?=json_encode($features)?>
 // https://www.php.net/manual/en/migration70.new-features.php
