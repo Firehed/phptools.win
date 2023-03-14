@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/Version.php';
+require __DIR__ . '/Feature.php';
+
 error_reporting(-1);
 set_error_handler(function (int $severity, string $message, string $file, int $line): bool {
     if (error_reporting() & $severity !== 0) {
@@ -9,79 +12,6 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
     }
     return false;
 });
-enum Version: string
-{
-    case v7_0 = '7.0';
-    case v7_1 = '7.1';
-    case v7_2 = '7.2';
-    case v7_3 = '7.3';
-    case v7_4 = '7.4';
-    case v8_0 = '8.0';
-    case v8_1 = '8.1';
-    case v8_2 = '8.2';
-}
-
-readonly class Feature
-{
-    public string $name;
-
-    public function __construct(
-        public Version $version,
-        public array $categories,
-        string $name,
-        public string $rfc,
-        public array $docs,
-    ) {
-        $this->name = $this->backticksToCode($name);
-    }
-
-    private function backticksToCode(string $text): string
-    {
-        if (!str_contains($text, '`')) {
-            return $text;
-        }
-        // EXTREMELY crude string parser:
-        // `foo` => <code>foo</code>
-        // \` => `
-        // \\ => \
-
-        $output = $currentCode = '';
-        $inCode = false;
-        $escaped = false;
-        // FIXME: mbstring
-        for ($i = 0; $i < strlen($text); $i++) {
-            $char = $text[$i];
-
-            if ($escaped) {
-                $escaped = false;
-                $output .= $char;
-                continue;
-            }
-
-            if ($char === '\\') {
-                $escaped = true;
-            } elseif ($char === '`') {
-                if ($inCode) {
-                    // Transfer to HTML code format
-                    $output .= '<code class="language-php">' . $currentCode . '</code>';
-                    // Turn off flags
-                    $inCode = false;
-                    $currentCode = '';
-                } else {
-                    $inCode = true;
-                }
-            } else {
-                if ($inCode) {
-                    $currentCode .= $char;
-                } else {
-                    $output .= $char;
-                }
-            }
-        }
-
-        return $output;
-    }
-}
 
 $buildVersion = getenv('GITHUB_SHA');
 $buildFooter = $buildVersion
