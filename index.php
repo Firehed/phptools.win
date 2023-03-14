@@ -23,13 +23,63 @@ enum Version: string
 
 readonly class Feature
 {
+    public string $name;
+
     public function __construct(
         public Version $version,
         public array $categories,
-        public string $name,
+        string $name,
         public string $rfc,
         public array $docs,
     ) {
+        $this->name = $this->backticksToCode($name);
+    }
+
+    private function backticksToCode(string $text): string
+    {
+        if (!str_contains($text, '`')) {
+            return $text;
+        }
+        // EXTREMELY crude string parser:
+        // `foo` => <code>foo</code>
+        // \` => `
+        // \\ => \
+
+        $output = $currentCode = '';
+        $inCode = false;
+        $escaped = false;
+        // FIXME: mbstring
+        for ($i = 0; $i < strlen($text); $i++) {
+            $char = $text[$i];
+
+            if ($escaped) {
+                $escaped = false;
+                $output .= $char;
+                continue;
+            }
+
+            if ($char === '\\') {
+                $escaped = true;
+            } elseif ($char === '`') {
+                if ($inCode) {
+                    // Transfer to HTML code format
+                    $output .= '<code class="language-php">' . $currentCode . '</code>';
+                    // Turn off flags
+                    $inCode = false;
+                    $currentCode = '';
+                } else {
+                    $inCode = true;
+                }
+            } else {
+                if ($inCode) {
+                    $currentCode .= $char;
+                } else {
+                    $output .= $char;
+                }
+            }
+        }
+
+        return $output;
     }
 }
 
@@ -172,6 +222,7 @@ $features = array_map(function ($row) {
           background-color: #4F5B93;
         }
         </style>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
     </head>
 
     <body>
@@ -243,7 +294,10 @@ features.forEach(feature => {
         links.appendChild(link)
     })
 
-    const row = makeRow([feature.name, links, ...versionInfo])
+    const name = document.createElement('p')
+    name.innerHTML = feature.name
+
+    const row = makeRow([name, links, ...versionInfo])
     tbody.appendChild(row)
 })
 table.appendChild(tbody)
@@ -251,6 +305,14 @@ table.appendChild(tbody)
 
 console.log(versions)
 // document.getElementById('data').innerHTML=JSON.stringify(features)
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" >
+        document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('code').forEach((el) => {
+            hljs.highlightElement(el)
+          })
+        })
         </script>
     </body>
 </html>

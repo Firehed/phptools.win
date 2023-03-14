@@ -90,7 +90,7 @@
   rfc: https://wiki.php.net/rfc/multiple-catch
   docs: []
   categories: []
-- name: keys in list() destructuring
+- name: keys in `list()` destructuring
   version: "7.1"
   rfc: https://wiki.php.net/rfc/list_keys
   docs: []
@@ -181,7 +181,7 @@
   docs: []
   categories:
   - Type System
-- name: Arrow functions (fn () => returnValue)
+- name: Arrow functions (<code class="language-php">fn () => returnValue</code</code>>)
   version: "7.4"
   rfc: https://wiki.php.net/rfc/arrow_functions_v2
   docs: []
@@ -273,13 +273,13 @@
   rfc: ""
   docs: []
   categories: []
-- name: return static
+- name: <code class="language-php">return static</code>
   version: "8.0"
   rfc: https://wiki.php.net/rfc/static_return_type
   docs: []
   categories:
   - Type System
-- name: $someObject::class (= get_class)
+- name: "`$someObject::class` (= get_class)"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/class_name_literal_on_object
   docs: []
@@ -367,7 +367,7 @@
   rfc: https://wiki.php.net/rfc/always_enable_json
   docs: []
   categories: []
-- name: 0o14 octal literal prefix
+- name: "`0o14` octal literal prefix"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/explicit_octal_notation
   docs: []
