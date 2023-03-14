@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/Version.php';
+require __DIR__ . '/Feature.php';
 
 error_reporting(-1);
 set_error_handler(function (int $severity, string $message, string $file, int $line): bool {
@@ -11,18 +12,6 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
     }
     return false;
 });
-readonly class Feature
-{
-    public function __construct(
-        public Version $version,
-        public array $categories,
-        public string $name,
-        public string $rfc,
-        public array $docs,
-    ) {
-    }
-}
-
 $buildVersion = getenv('GITHUB_SHA');
 $buildFooter = $buildVersion
     ? "<footer>Build version <a href=\"https://github.com/Firehed/phptools.win/commit/$buildVersion\" target=\"_blank\"><code>$buildVersion</code></a></footer>"
