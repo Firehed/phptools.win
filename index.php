@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/Version.php';
+
 error_reporting(-1);
 set_error_handler(function (int $severity, string $message, string $file, int $line): bool {
     if (error_reporting() & $severity !== 0) {
@@ -9,18 +11,6 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
     }
     return false;
 });
-enum Version: string
-{
-    case v7_0 = '7.0';
-    case v7_1 = '7.1';
-    case v7_2 = '7.2';
-    case v7_3 = '7.3';
-    case v7_4 = '7.4';
-    case v8_0 = '8.0';
-    case v8_1 = '8.1';
-    case v8_2 = '8.2';
-}
-
 readonly class Feature
 {
     public function __construct(
