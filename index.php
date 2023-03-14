@@ -12,6 +12,7 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
     }
     return false;
 });
+
 $buildVersion = getenv('GITHUB_SHA');
 $buildFooter = $buildVersion
     ? "<footer>Build version <a href=\"https://github.com/Firehed/phptools.win/commit/$buildVersion\" target=\"_blank\"><code>$buildVersion</code></a></footer>"
@@ -151,6 +152,7 @@ $features = array_map(function ($row) {
           background-color: #4F5B93;
         }
         </style>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
     </head>
 
     <body>
@@ -222,7 +224,10 @@ features.forEach(feature => {
         links.appendChild(link)
     })
 
-    const row = makeRow([feature.name, links, ...versionInfo])
+    const name = document.createElement('p')
+    name.innerHTML = feature.name
+
+    const row = makeRow([name, links, ...versionInfo])
     tbody.appendChild(row)
 })
 table.appendChild(tbody)
@@ -230,6 +235,14 @@ table.appendChild(tbody)
 
 console.log(versions)
 // document.getElementById('data').innerHTML=JSON.stringify(features)
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" >
+        document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('code').forEach((el) => {
+            hljs.highlightElement(el)
+          })
+        })
         </script>
     </body>
 </html>

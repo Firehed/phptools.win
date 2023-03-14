@@ -6,20 +6,20 @@
   categories:
   - Type System
 
-- name: return types
+- name: Native return types
   version: "7.0"
   rfc: https://wiki.php.net/rfc/return_types
   docs: []
   categories:
   - Type System
 
-- name: ?? null coalesce
+- name: "`??` null coalesce operator"
   version: "7.0"
   rfc: https://wiki.php.net/rfc/isset_ternary
   docs: []
   categories: []
 
-- name: <=>
+- name: Spaceship operator (`<=>`)
   version: "7.0"
   rfc: https://wiki.php.net/rfc/combined-comparison-operator
   docs: []
@@ -38,54 +38,54 @@
   docs: []
   categories: []
 
-- name: \\u{0000aa}
+- name: Unicode string literals `\\u{0000aa}`
   version: "7.0"
   rfc: https://wiki.php.net/rfc/unicode_escape
   docs: []
   categories: []
 
-- name: Group use imports
+- name: Group `use` imports
   version: "7.0"
   rfc: https://wiki.php.net/rfc/group_use_declarations
   docs: []
   categories: []
 
-- name: throwable
+- name: "`Throwable` type"
   version: "7.0"
   rfc: https://wiki.php.net/rfc/throwable-interface
   docs: []
   categories:
   - New interface
 
-- name: random_byes, random_int
+- name: RNG functions `random_bytes` and `random_int`
   version: "7.0"
   rfc: https://wiki.php.net/rfc/easy_userland_csprng
   docs: []
   categories:
   - New function
 
-- name: ?nullable
+- name: "`?nullable` type"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/nullable_types
   docs: []
   categories:
   - Type System
 
-- name: return void
+- name: "`void` return type"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/void_return_type
   docs: []
   categories:
   - Type System
 
-- name: iterable
+- name: "`iterable`"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/iterable
   docs: []
   categories:
   - Type System
 
-- name: "[$a, $b] = $array"
+- name: Square bracket array destructuring - `[$a, $b] = $array`
   version: "7.1"
   rfc: https://wiki.php.net/rfc/short_list_syntax
   docs: []
@@ -99,13 +99,13 @@
   categories:
   - OOP
 
-- name: catch (A|B $e)
+- name: Multiple catch types in one block - `catch (A|B $e)`
   version: "7.1"
   rfc: https://wiki.php.net/rfc/multiple-catch
   docs: []
   categories: []
 
-- name: keys in list() destructuring
+- name: keys in `list()` destructuring
   version: "7.1"
   rfc: https://wiki.php.net/rfc/list_keys
   docs: []
@@ -118,13 +118,13 @@
   docs: []
   categories: []
 
-- name: pcntl_async_signals
+- name: Async handling `pcntl_async_signals` function
   version: "7.1"
   rfc: https://wiki.php.net/rfc/async_signals
   docs: []
   categories: []
 
-- name: object type
+- name: Native `object` typehint
   version: "7.2"
   rfc: https://wiki.php.net/rfc/object-typehint
   docs: []
@@ -157,7 +157,7 @@
   categories:
   - Type System
 
-- name: groupd namespace trailing comma
+- name: grouped namespace trailing comma
   version: "7.2"
   rfc: https://wiki.php.net/rfc/list-syntax-trailing-commas
   docs: []
@@ -191,14 +191,14 @@
   docs: []
   categories: []
 
-- name: JSON_THROW_ON_ERROR
+- name: JSON constant `JSON_THROW_ON_ERROR`
   version: "7.3"
   rfc: https://wiki.php.net/rfc/json_throw_on_error
   docs: []
   categories:
   - New constant
 
-- name: is_countable
+- name: "`is_countable` function"
   version: "7.3"
   rfc: https://wiki.php.net/rfc/is-countable
   docs: []
@@ -226,7 +226,7 @@
   categories:
   - Type System
 
-- name: ??=
+- name: Null coalesce equals operator - `??=`
   version: "7.4"
   rfc: https://wiki.php.net/rfc/null_coalesce_equal_operator
   docs: []
@@ -240,14 +240,14 @@
   categories:
   - Syntax
 
-- name: Numeric literal separator (1_000)
+- name: Numeric literal separator - `1_000`
   version: "7.4"
   rfc: https://wiki.php.net/rfc/numeric_literal_separator
   docs: []
   categories:
   - Syntax
 
-- name: WeakReference class
+- name: Added `WeakReference` class
   version: "7.4"
   rfc: https://wiki.php.net/rfc/weakrefs
   docs: []
@@ -273,7 +273,7 @@
   categories:
   - Syntax
 
-- name: attributes
+- name: attributes - `#[AttributeClass]`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/attributes_v2 (++)
   docs: []
@@ -286,28 +286,28 @@
   categories:
   - Syntax
 
-- name: Union|Type
+- name: Union types - `Union|Type`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/union_types_v2
   docs: []
   categories:
   - Type System
 
-- name: match
+- name: "`match` expression"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/match_expression_v2
   docs: []
   categories:
   - Syntax
 
-- name: ?->
+- name: Nullsafe property access - `?->`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/nullsafe_operator
   docs: []
   categories:
   - Syntax
 
-- name: WeakMap class
+- name: "`WeakMap` class"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/weak_maps
   docs: []
@@ -320,21 +320,21 @@
   docs: []
   categories: []
 
-- name: return static
+- name: "`static` return type"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/static_return_type
   docs: []
   categories:
   - Type System
 
-- name: $someObject::class (= get_class)
+- name: get_class on object shorthand - `$someObject::class`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/class_name_literal_on_object
   docs: []
   categories:
   - Syntax
 
-- name: Stringable interface
+- name: "`Stringable` interface"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/stringable
   docs: []
@@ -348,7 +348,7 @@
   categories:
   - Type System
 
-- name: throw as expression
+- name: "`throw` as expression"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/throw_expression
   docs: []
@@ -362,14 +362,14 @@
   categories:
   - Syntax
 
-- name: catch (Type) w/out var
+- name: Non-capturing catches - `catch (Type)`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/non-capturing_catches
   docs: []
   categories:
   - Syntax
 
-- name: mixed
+- name: Native `mixed` type
   version: "8.0"
   rfc: https://wiki.php.net/rfc/mixed_type_v2
   docs: []
@@ -383,7 +383,7 @@
   categories:
   - Type System
 
-- name: str_starts_with/ends_with/contains
+- name: String functions `str_starts_with` and `str_ends_with`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/add_str_starts_with_and_ends_with_functions
   docs: []
@@ -403,7 +403,7 @@
   docs: []
   categories: []
 
-- name: get_debug_type()
+- name: "`get_debug_type` function"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/get_debug_type
   docs: []
@@ -430,7 +430,7 @@
   docs: []
   categories: []
 
-- name: 0o14 octal literal prefix
+- name: Octal literal prefix - `0o14`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/explicit_octal_notation
   docs: []
@@ -463,52 +463,52 @@
   categories:
   - New class
 
-- name: first-class callable ($s = strlen(...) == fn ($str) => strlen($str))
+- name: first-class callables - `$s = strlen(...)` instead of `$s = fn ($str) => strlen($str)`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/first_class_callable_syntax
   docs: []
   categories: []
 
-- name: A&B&C intersection types
+- name: Intersection types `A & B & C`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/pure-intersection-types
   docs: []
   categories:
   - Type System
 
-- name: return never
+- name: Native `never` return type
   version: "8.1"
   rfc: https://wiki.php.net/rfc/noreturn_type
   docs: []
   categories:
   - Type System
 
-- name: new in initializers (__construct(?Foo = new Foo())
+- name: new in initializers - `__construct(?Foo $foo = new Foo())`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/new_in_initializers
   docs: []
   categories: []
 
-- name: readonly properties
+- name: "`readonly` properties"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/readonly_properties_v2
   docs: []
   categories: []
 
-- name: final class constants
+- name: Class constants can be `final`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/final_class_const
   docs: []
   categories: []
 
-- name: array_is_list
+- name: "`array_is_list` function"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/is_list
   docs: []
   categories:
   - New function
 
-- name: $GLOBALS restrictions
+- name: "`$GLOBALS` restrictions"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/restrict_globals_usage
   docs: []
@@ -522,14 +522,14 @@
   categories:
   - Type System+BC
 
-- name: '#[SensitiveParameters] attribute'
+- name: Add attribute `#[SensitiveParameter]`
   version: "8.2"
   rfc: https://wiki.php.net/rfc/redact_parameters_in_back_traces
   docs: []
   categories:
   - New Attribute
 
-- name: '#[AllowDynamicProperties] attribute'
+- name: Deprecate dynamic properties; add `#[AllowDynamicProperties]` attribute
   version: "8.2"
   rfc: https://wiki.php.net/rfc/deprecate_dynamic_properties
   docs: []
@@ -542,21 +542,21 @@
   docs: []
   categories: []
 
-- name: standalone true type
+- name: standalone `true` type
   version: "8.2"
   rfc: https://wiki.php.net/rfc/true-type
   docs: []
   categories:
   - Type System
 
-- name: standalone null+false types
+- name: standalone `null` and `false` types
   version: "8.2"
   rfc: https://wiki.php.net/rfc/null-false-standalone-types
   docs: []
   categories:
   - Type System
 
-- name: DNF ((A&B)|C)
+- name: Disjunctive Normal Form types - `(A&B)|C`
   version: "8.2"
   rfc: https://wiki.php.net/rfc/dnf_types
   docs: []
@@ -569,9 +569,8 @@
   docs: []
   categories: []
 
-- name: readonly classes
+- name: "`readonly` classes"
   version: "8.2"
   rfc: https://wiki.php.net/rfc/readonly_classes
   docs: []
   categories: []
-...
