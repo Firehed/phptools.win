@@ -574,3 +574,31 @@
   rfc: https://wiki.php.net/rfc/readonly_classes
   docs: []
   categories: []
+
+  https://wiki.php.net/rfc/json_validate
+
+  https://wiki.php.net/rfc/randomizer_additions
+
+- name: "`DateException` and `DateError`"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/datetime-exceptions
+
+- name: Typed class cosntants
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/typed_class_constants
+
+- name: Updating readonly properties during clone
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/readonly_amendments
+
+
+- name: Dynamic class constant fetch
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/dynamic_class_constant_fetch
+
+- name: Add `#[Override]` attribute
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/marking_overriden_methods
+  categories:
+  - Type System
+
