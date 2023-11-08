@@ -575,30 +575,113 @@
   docs: []
   categories: []
 
-  https://wiki.php.net/rfc/json_validate
 
-  https://wiki.php.net/rfc/randomizer_additions
 
-- name: "`DateException` and `DateError`"
+- name: Deprecations for PHP 8.3 (Created 2022-08-01)
   version: "8.3"
-  rfc: https://wiki.php.net/rfc/datetime-exceptions
+  rfc:
+  docs: []
+  categories: []
 
-- name: Typed class cosntants
+- name: Path to Saner Increment/Decrement operators (Discussion started: 2023-01-17, Voting start: 2023-06-28, Voting end: 2023-07-12)
   version: "8.3"
-  rfc: https://wiki.php.net/rfc/typed_class_constants
-
-- name: Updating readonly properties during clone
-  version: "8.3"
-  rfc: https://wiki.php.net/rfc/readonly_amendments
-
-
-- name: Dynamic class constant fetch
-  version: "8.3"
-  rfc: https://wiki.php.net/rfc/dynamic_class_constant_fetch
+  rfc:
+  docs: []
+  categories: []
 
 - name: Add `#[Override]` attribute
   version: "8.3"
   rfc: https://wiki.php.net/rfc/marking_overriden_methods
+  docs: []
   categories:
   - Type System
 
+- name: Arbitrary static variable initializers (Created 2022-11-06)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Make unserialize() emit a warning for trailing data (Discussion started: 2023-03-27)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Dynamic class constant fetch
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/dynamic_class_constant_fetch
+  docs: []
+  categories: []
+
+- name: Improve unserialize() error handling (Created 2022-09-01, Voting opened 2022-10-14, Voting closed 2022-10-28)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Updating readonly properties during clone
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/readonly_amendments
+  docs: []
+  categories: []
+
+- name: Typed class cosntants
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/typed_class_constants
+  docs: []
+  categories: []
+
+- name: Deprecate remains of string evaluated code assertions (Created: 2023-05-31, Voting start: 2023-06-28, Voting end: 2023-07-12)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: mb_str_pad (Created: 2023-05-19, Discussion started: 2023-05-20, Voting started: 2023-06-05, Voting closed: 2023-06-19)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Saner array_(sum|product)() (Discussion started: 2023-01-17, Voting opened 2023-02-20, Voting closed 2023-03-06, Implemented: 2023-03-07)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Define proper semantics for range() function (Discussion started: 2023-03-27, Voting started: 2023-06-01, Voting ended: 2023-06-15)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: "Additions to `Random\Randomizer`; add `Random\IntervalBoundary`"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/randomizer_additions
+  docs: []
+  categories: []
+
+- name: "`DateException` and `DateError`"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/datetime-exceptions
+  docs: []
+  categories: []
+
+- name: "Add `json_validate` function"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/json_validate
+  docs: []
+  categories: []
+
+- name: Use exceptions by default in SQLite3 extension
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
+
+- name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
+  version: "8.3"
+  rfc:
+  docs: []
+  categories: []
