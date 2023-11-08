@@ -669,7 +669,7 @@
   categories:
   - Warning
 
-- name: "Additions to `Random\Randomizer`; add `Random\IntervalBoundary`"
+- name: "Additions to `Random\\Randomizer`; add `Random\\IntervalBoundary`"
   version: "8.3"
   rfc: https://wiki.php.net/rfc/randomizer_additions
   docs: []
