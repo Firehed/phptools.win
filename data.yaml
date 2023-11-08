@@ -574,3 +574,134 @@
   rfc: https://wiki.php.net/rfc/readonly_classes
   docs: []
   categories: []
+
+# - name: Deprecations for PHP 8.3 (Created 2022-08-01)
+#   version: "8.3"
+#   rfc:
+#   docs: []
+#   categories: []
+
+ # Adds str_increment and str_decrement
+ # Emit warning in inc/dec of null and bool
+ # Deprecate decrement of non-numeric strings
+ # Deprecate increment of "not strictly alphanumeric" strings
+# - name: Path to Saner Increment/Decrement operators (Discussion started: 2023-01-17, Voting start: 2023-06-28, Voting end: 2023-07-12)
+#   version: "8.3"
+#   rfc:
+#   docs: []
+#   categories: []
+
+- name: Add `#[Override]` attribute
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/marking_overriden_methods
+  docs: []
+  categories:
+  - New Attribute
+
+- name: Arbitrary static variable initializers
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/arbitrary_static_variable_initializers
+  docs: []
+  categories:
+  - Syntax
+
+- name: "Make `unserialize()` emit a warning for trailing data"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/unserialize_warn_on_trailing_data
+  docs: []
+  categories:
+  - Warning
+
+- name: Dynamic class constant fetch
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/dynamic_class_constant_fetch
+  docs: []
+  categories:
+  - Syntax
+
+- name: Improve unserialize() error handling
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/improve_unserialize_error_handling
+  docs: []
+  categories:
+  - Error handling
+
+- name: Updating readonly properties during clone
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/readonly_amendments
+  docs: []
+  categories:
+  - Syntax
+
+- name: Typed class cosntants
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/typed_class_constants
+  docs: []
+  categories:
+  - Syntax
+
+- name: Deprecate remains of string evaluated code assertions
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/assert-string-eval-cleanup
+  docs: []
+  categories:
+  - Deprecation/BC
+
+- name: "Add `mb_str_pad` function"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/mb_str_pad
+  docs: []
+  categories:
+  - New functions
+
+- name: Warn on invalid operations with `array_sum` and `array_product`
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/saner-array-sum-product
+  docs: []
+  categories:
+  - Warning
+  - Deprecation/BC
+
+- name: Warn or error for undefined `range()` usage
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/proper-range-semantics
+  docs: []
+  categories:
+  - Warning
+
+- name: "Additions to `Random\\Randomizer`; add `Random\\IntervalBoundary`"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/randomizer_additions
+  docs: []
+  categories:
+  - New enums
+  - New class methods
+
+- name: "`DateException` and `DateError`"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/datetime-exceptions
+  docs: []
+  categories:
+  - New class
+
+- name: "Add `json_validate` function"
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/json_validate
+  docs: []
+  categories:
+  - New functions
+
+- name: Use exceptions by default in SQLite3 extension
+  version: "8.3"
+  rfc: https://wiki.php.net/rfc/sqlite3_exceptions
+  docs: []
+  categories:
+  - Deprecation/BC
+
+      # This has a lot of surafce area
+# - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
+#   version: "8.3"
+#   rfc: https://wiki.php.net/rfc/deprecate_functions_with_overloaded_signatures
+#   docs: []
+#   categories:
+
