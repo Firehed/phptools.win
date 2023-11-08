@@ -25,6 +25,7 @@ readonly class Feature
         // `foo` => <code>foo</code>
         // \` => `
         // \\ => \
+        // Any character following \ other than ` and \ will get dropped!
 
         $output = $currentCode = '';
         $inCode = false;
@@ -35,7 +36,11 @@ readonly class Feature
 
             if ($escaped) {
                 $escaped = false;
-                $output .= $char;
+                if ($inCode) {
+                    $currentCode .= $char;
+                } else {
+                    $output .= $char;
+                }
                 continue;
             }
 
