@@ -39,6 +39,11 @@ $features = array_map(function ($row) {
           margin: 0;
           padding: 0;
         }
+        table thead {
+          position: sticky;
+          top: 0;
+          background-color: #7A86B8;
+        }
         table thead th {
           padding: 0 0.5em;
         }
