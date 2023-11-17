@@ -35,21 +35,40 @@ $features = array_map(function ($row) {
     <head>
         <title>PHP Feature Versions</title>
         <style type="text/css">
+        :root {
+            --bg: #f7f6f2;
+            --table-stripe: #EEE;
+            --php-purple: #7A86B8;
+            --blue: #268bd2;
+            --violet: #6c71c4;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #3b3936;
+                --table-stripe: #322e27;
+            }
+        }
+        
         * {
           margin: 0;
           padding: 0;
         }
+        a { color: var(--blue); }
+        a:visited { color: var(--violet); }
+        body {
+          background-color: var(--bg);
+        }
         table thead {
           position: sticky;
           top: 0;
-          background-color: #7A86B8;
+          background-color: var(--php-purple);
         }
         table thead th {
           padding: 0 0.5em;
         }
         /* zebra-stripe the table */
         table tr:nth-child(even) {
-          background-color: #EEE;
+          background-color: var(--table-stripe);
         }
         /* center the table */
         #root > table {
