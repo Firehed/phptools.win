@@ -35,21 +35,47 @@ $features = array_map(function ($row) {
     <head>
         <title>PHP Feature Versions</title>
         <style type="text/css">
+        :root {
+          --bg: #f7f6f2;
+          --text: #000;
+          --table-stripe: #eee;
+          --php-purple: #7a86b8;
+          --blue: #268bd2;
+          --violet: #6c71c4;
+        }
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --text: #eaeae9;
+            --bg: #3b3936;
+            --table-stripe: #322e27;
+          }
+        }
+        
         * {
           margin: 0;
           padding: 0;
+          font-family: sans-serif;
+        }
+        a { color: var(--blue); }
+        a:visited { color: var(--violet); }
+        body {
+          background-color: var(--bg);
+          color: var(--text);
         }
         table thead {
           position: sticky;
           top: 0;
-          background-color: #7A86B8;
+          background-color: var(--php-purple);
         }
         table thead th {
           padding: 0 0.5em;
         }
+        table tbody td {
+          padding: 0.15em 0;
+        }
         /* zebra-stripe the table */
         table tr:nth-child(even) {
-          background-color: #EEE;
+          background-color: var(--table-stripe);
         }
         /* center the table */
         #root > table {
@@ -157,7 +183,8 @@ $features = array_map(function ($row) {
           background-color: #4F5B93;
         }
         </style>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-light.min.css" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css" media="screen and (prefers-color-scheme: dark)">
     </head>
 
     <body>
