@@ -275,7 +275,7 @@
 
 - name: attributes - `#[AttributeClass]`
   version: "8.0"
-  rfc: https://wiki.php.net/rfc/attributes_v2 (++)
+  rfc: https://wiki.php.net/rfc/attributes_v2
   docs: []
   categories: []
 
