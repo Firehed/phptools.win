@@ -2,7 +2,7 @@
   version: "8.4"
   docs: []
   categories: []
-  rfc: "#"
+  rfc: ""
 
 - name: scalar types, strict_types=1
   version: "7.0"
