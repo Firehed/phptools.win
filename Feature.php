@@ -67,4 +67,23 @@ readonly class Feature
 
         return $output;
     }
+
+    public function renderLinks(): string
+    {
+        $out = [self::link($this->rfc, 'RFC')];
+        foreach ($this->docs as $doc) {
+            $out[] = self::link($doc, 'Docs');
+        }
+
+        return implode(', ', $out);
+    }
+
+    private static function link(string $to, string $text): string
+    {
+        return sprintf(
+            '<a href="%s" rel="noopener nofollow" target="_blank">%s</a>',
+            $to,
+            $text,
+        );
+    }
 }

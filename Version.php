@@ -17,4 +17,19 @@ enum Version: string
 
     public const CURRENT = [self::v8_1, self::v8_2, self::v8_3];
     public const UPCOMING = self::v8_4;
+
+    public function isAddedInCurrent(): bool
+    {
+        return in_array($this, self::CURRENT);
+    }
+
+    public function isUpcoming(): bool
+    {
+        return $this === self::UPCOMING;
+    }
+
+    public function isSupportedInVersion(Version $version): bool
+    {
+        return version_compare($this->value, $version->value, '>=');
+    }
 }
