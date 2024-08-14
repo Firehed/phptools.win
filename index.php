@@ -77,16 +77,18 @@ $features = array_map(function ($row) {
         table tr:nth-child(even) {
           background-color: var(--table-stripe);
         }
-        /* center the table */
 
-h1, h2 { text-align: center; line-height: 1.4;}
-body {
-}
-#root {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
+        h1, h2 {
+            text-align: center;
+        }
+        h2 {
+            margin-block: 1em;
+        }
+        #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         /*!
          * "Fork me on GitHub" CSS ribbon v0.2.3 | MIT License
