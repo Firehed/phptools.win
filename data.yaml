@@ -1,3 +1,9 @@
+- name: Data for 8.4 features coming soon
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: ""
+
 - name: scalar types, strict_types=1
   version: "7.0"
   rfc: https://wiki.php.net/rfc/scalar_type_hints_v5

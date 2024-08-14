@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+$start = hrtime(true);
+
 require __DIR__ . '/Version.php';
 require __DIR__ . '/Feature.php';
 
@@ -77,9 +79,17 @@ $features = array_map(function ($row) {
         table tr:nth-child(even) {
           background-color: var(--table-stripe);
         }
-        /* center the table */
-        #root > table {
-            margin: 0 auto;
+
+        h1, h2 {
+            text-align: center;
+        }
+        h2 {
+            margin-block: 1em;
+        }
+        #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /*!
@@ -189,85 +199,73 @@ $features = array_map(function ($row) {
 
     <body>
         <a class="github-fork-ribbon" href="https://www.github.com/Firehed/phptools.win" data-ribbon="Edit me on GitHub" title="Edit me on GitHub" target="_blank">Edit me on GitHub</a>
-        <div id="root"></div>
+
+<div id="root">
+<h1>PHP Features by version</h1>
+<h2>Currently supported PHP versions</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Links</th>
+<?=implode('', array_map(fn ($v) => "<th>$v->value</th>", Version::CURRENT))?>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach (array_filter($features, fn ($f) => $f->version->isAddedInCurrent()) as $feature): ?>
+        <tr>
+            <td><?=$feature->name?></td>
+            <td><?=$feature->renderLinks()?></td>
+            <?php foreach (Version::CURRENT as $version): ?>
+                <td><?=$feature->version->isSupportedInVersion($version) ? 'Y' : ''?>
+            <?php endforeach; ?>
+        </tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+
+<h2>Next release (<?=Version::UPCOMING->value?>)</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Links</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach (array_filter($features, fn ($f) => $f->version->isSupportedInVersion(Version::UPCOMING)) as $feature): ?>
+        <tr>
+            <td><?=$feature->name?></td>
+            <td><?=$feature->renderLinks()?></td>
+        </tr>
+<?php endforeach; ?>
+    </tbody>
+</table>
+
+
+<h2>Previously-introduced</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Links</th>
+            <th>Introduced</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach (array_filter($features, fn ($f) => !($f->version->isAddedInCurrent() || $f->version->isUpcoming())) as $feature): ?>
+        <tr>
+            <td><?=$feature->name?></td>
+            <td><?=$feature->renderLinks()?></td>
+            <td><?=$feature->version->value?></td>
+        </tr>
+<?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+
         <footer>This site is not affiliated with PHP.net or The PHP Group</footer>
         <?=$buildFooter?>
-        <script type="text/javascript">
-const features = <?=json_encode($features)?>
-// https://www.php.net/manual/en/migration70.new-features.php
-// https://www.php.net/manual/en/migration71.new-features.php
-// https://www.php.net/manual/en/migration72.new-features.php
-// https://www.php.net/manual/en/migration73.new-features.php
-// https://www.php.net/manual/en/migration74.new-features.php
-// https://www.php.net/manual/en/migration80.new-features.php
-// https://www.php.net/manual/en/migration81.new-features.php
-// https://www.php.net/manual/en/migration82.new-features.php
-
-const makeRow = (values, el = 'td') => {
-    const tds = values.map(v => {
-        const td = document.createElement(el)
-        // td.innerHTML = v
-        if (typeof v === 'string') {
-            td.innerText = v
-        } else {
-            td.appendChild(v)
-        }
-        return td
-    })
-    const tr = document.createElement('tr')
-    tds.forEach(td => tr.appendChild(td))
-    return tr
-}
-
-const versions = Array.from(new Set(features.map(feat => feat.version))).sort()
-
-const root = document.getElementById('root')
-const table = document.createElement('table')
-root.appendChild(table)
-
-const thead = document.createElement('thead')
-thead.appendChild(makeRow(['Name', 'Links', ...versions], 'th'))
-table.appendChild(thead)
-
-const tbody = document.createElement('tbody')
-
-features.forEach(feature => {
-
-    // blah
-    const versionInfo = versions.map(version => version >= feature.version ? 'Y' : '')
-
-    // TODO: comma separation
-    const links = document.createElement('p')
-    if (feature.rfc !== '') {
-        const link = document.createElement('a')
-        link.innerText = 'RFC ↗️'
-        link.href = feature.rfc
-        link.rel = 'noopener nofollow'
-        link.target = '_blank'
-        links.appendChild(link)
-    }
-
-    feature.docs.forEach(docLink => {
-        const link = document.createElement('a')
-        link.innerText = 'Docs ↗️'
-        link.href = docLink,
-        link.rel = 'noopener nofollow'
-        link.target = '_blank'
-        links.appendChild(link)
-    })
-
-    const name = document.createElement('p')
-    name.innerHTML = feature.name
-
-    const row = makeRow([name, links, ...versionInfo])
-    tbody.appendChild(row)
-})
-table.appendChild(tbody)
-
-
-console.log(versions)
-// document.getElementById('data').innerHTML=JSON.stringify(features)
-        </script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
         <script type="text/javascript" >
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -278,4 +276,8 @@ console.log(versions)
         </script>
     </body>
 </html>
+<?php
+$renderNs = hrtime(true) - $start;
+$renderMs = $renderNs / 1_000_000;
+echo '<!-- built in ' . round($renderMs, 3) . 'ms -->';
 
