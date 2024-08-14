@@ -776,7 +776,7 @@
   categories: []
   rfc: https://wiki.php.net/rfc/mb_trim
 
-- name: Raise BCrypt default cost
+- name: Raise BCrypt default cost from 10 to 12
   version: "8.4"
   docs: []
   categories: []
