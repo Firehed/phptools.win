@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+$start = hrtime(true);
+
 require __DIR__ . '/Version.php';
 require __DIR__ . '/Feature.php';
 
@@ -274,4 +276,8 @@ $features = array_map(function ($row) {
         </script>
     </body>
 </html>
+<?php
+$renderNs = hrtime(true) - $start;
+$renderMs = $renderNs / 1_000_000;
+echo '<!-- built in ' . round($renderMs, 3) . 'ms -->';
 
