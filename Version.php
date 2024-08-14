@@ -13,14 +13,8 @@ enum Version: string
     case v8_1 = '8.1';
     case v8_2 = '8.2';
     case v8_3 = '8.3';
+    case v8_4 = '8.4';
 
-    public function isActivelySupportedVersion(): bool
-    {
-        return match ($this) {
-            Version::v8_1 => true,
-            Version::v8_2 => true,
-            Version::v8_3 => true,
-            default => false,
-        };
-    }
+    public const CURRENT = [self::v8_1, self::v8_2, self::v8_3];
+    public const UPCOMING = self::v8_4;
 }
