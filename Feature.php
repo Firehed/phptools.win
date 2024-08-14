@@ -70,7 +70,10 @@ readonly class Feature
 
     public function renderLinks(): string
     {
-        $out = [self::link($this->rfc, 'RFC')];
+        $out = [];
+        if ($this->rfc !== '') {
+            $out[] = self::link($this->rfc, 'RFC');
+        }
         foreach ($this->docs as $doc) {
             $out[] = self::link($doc, 'Docs');
         }
