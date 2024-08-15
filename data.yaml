@@ -1,9 +1,3 @@
-- name: Data for 8.4 features coming soon
-  version: "8.4"
-  docs: []
-  categories: []
-  rfc: ""
-
 - name: scalar types, strict_types=1
   version: "7.0"
   rfc: https://wiki.php.net/rfc/scalar_type_hints_v5
@@ -703,6 +697,198 @@
   docs: []
   categories:
   - Deprecation/BC
+
+- name: Make `GMP` final 
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/gmp-final
+
+- name: More `ext-dom` features
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/dom_additions_84
+
+- name: Stream opening functions for XML classes
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/xmlreader_writer_streams
+
+- name: PDO driver-specific parsers
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/pdo_driver_specific_parsers
+
+- name: Add `array_find` function
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/array_find
+
+- name: Deprecate `0 ** -x`
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/raising_zero_to_power_of_negative_number
+
+- name: Unbundle `imap`, `pspell`, and `oci8` extensions
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/unbundle_imap_pspell_oci8
+
+- name: Add `StreamBucket` class
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/dedicated_stream_bucket
+
+- name: Opt-in DOM spec compliance
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/opt_in_dom_spec_compliance
+
+- name: Improve callbacks in `ext-dom` and `ext-xsl`
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/improve_callbacks_dom_and_xsl
+
+- name: Native `PDO` driver-specific subclasses
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/pdo_driver_specific_subclasses
+
+- name: New constants for `round` modes
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/new_rounding_modes_to_round_function
+
+- name: Add `mb_trim`, `mb_ltrim`, and `mb_rtrim` functions
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/mb_trim
+
+- name: Raise BCrypt default cost from 10 to 12
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/bcrypt_cost_2023
+
+- name: Add `XML_OPTION_PARSE_HUGE`
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/xml_option_parse_huge
+
+- name: New JIT internals
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/jit-ir
+
+- name: HTML5 DOM parsing and serialization
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/domdocument_html5_parser
+
+- name: Change JIT default INI values
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/jit_config_defaults
+
+- name: Add `request_parse_body` function (RFC1867 for non-POST verbs)
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/rfc1867-non-post
+
+- name: Add `http_get_last_response_headers` and `http_clear_last_response_headers` functions
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/http-last-response-headers
+
+- name: Add `mb_ucfirst` and `mb_lcfirst` functions
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/mb_ucfirst
+
+- name: Add `grapheme_str_split` function (improve handling of strings with emojis)
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/grapheme_str_split
+
+- name: Add `bcround`, `bcfloor`, `bcceil` to BC Math
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/adding_bcround_bcfloor_bcceil_to_bcmath
+
+- name: Deprecate implicitly nullable parameters
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecate-implicitly-nullable-types
+
+- name: Support `new MyClass()->method()` without extra parentheses
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/new_without_parentheses
+
+- name: Add `#[Deprecated]` attribute and behavior
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecated_attribute
+
+- name: Add property hooks
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/property-hooks
+  # also https://wiki.php.net/rfc/hook_improvements
+
+- name: Change rounding mode to enum
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/correctly_name_the_rounding_mode_and_make_it_an_enum
+
+  # pending landing:
+  # deprecate get/post sessions
+  # bcmath number class
+  # bcdivmod
+  # new deprecations
+- name: Asymmetric visibility (`public private(set) string $foo = 'bar';`)
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/asymmetric-visibility-v2
+
+- name: Lazy object instantiation
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/lazy-objects
+
+- name: Turn `exit` into a function
+  version: "8.4"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/exit-as-function
 
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
