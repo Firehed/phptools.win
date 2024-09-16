@@ -30,6 +30,6 @@ enum Version: string
 
     public function isSupportedInVersion(Version $version): bool
     {
-        return version_compare($this->value, $version->value, '>=');
+        return version_compare($this->value, $version->value, '<=');
     }
 }
