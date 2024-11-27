@@ -233,7 +233,7 @@ $features = array_map(function ($row) {
         </tr>
     </thead>
     <tbody>
-<?php foreach (array_filter($features, fn ($f) => $f->version->isSupportedInVersion(Version::UPCOMING)) as $feature): ?>
+<?php foreach (array_filter($features, fn ($f) => $f->version->isUpcoming()) as $feature): ?>
         <tr>
             <td><?=$feature->name?></td>
             <td><?=$feature->renderLinks()?></td>
