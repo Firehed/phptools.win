@@ -33,4 +33,32 @@ enum Version: string
     {
         return version_compare($this->value, $version->value, '<=');
     }
+
+    /**
+     * Null indicates no active support (or unknown)
+     */
+    public function getActiveSupportCutoff(): ?DateTimeImmutable
+    {
+        return match ($this) {
+            self::v8_1 => new DateTimeImmutable('2023-11-25'),
+            self::v8_2 => new DateTimeImmutable('2024-12-31'),
+            self::v8_3 => new DateTimeImmutable('2025-12-31'),
+            self::v8_4 => new DateTimeImmutable('2026-12-31'),
+            default => null,
+        };
+    }
+
+    /**
+     * Null indicates no security support (or unknown)
+     */
+    public function getSecuritySupportCutoff(): ?DateTimeImmutable
+    {
+        return match ($this) {
+            self::v8_1 => new DateTimeImmutable('2025-12-31'),
+            self::v8_2 => new DateTimeImmutable('2026-12-31'),
+            self::v8_3 => new DateTimeImmutable('2027-12-31'),
+            self::v8_4 => new DateTimeImmutable('2028-12-31'),
+            default => null,
+        };
+    }
 }

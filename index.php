@@ -81,6 +81,7 @@ $features = array_map(function ($row) {
         }
 
         h1, h2 {
+            margin-block: 1rem;
             text-align: center;
         }
         h2 {
@@ -192,6 +193,10 @@ $features = array_map(function ($row) {
         .github-fork-ribbon:before {
           background-color: #4F5B93;
         }
+        table > caption {
+            caption-side: bottom;
+            font-size: smaller;
+        }
         </style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-light.min.css" media="screen">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css" media="screen and (prefers-color-scheme: dark)">
@@ -202,7 +207,31 @@ $features = array_map(function ($row) {
 
 <div id="root">
 <h1>PHP Features by version</h1>
+
+<table>
+    <caption>
+        <a href="https://www.php.net/supported-versions.php">Source</a>
+    </caption>
+    <thead>
+        <tr>
+            <th>Version</th>
+            <th>Active Support Ends</th>
+            <th>Security Support Ends</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach (Version::CURRENT as $version): ?>
+        <tr>
+            <th><?=$version->value?></th>
+            <td><time><?=$version->getActiveSupportCutoff()->format('Y-m-d')?></time></td>
+            <td><time><?=$version->getSecuritySupportCutoff()->format('Y-m-d')?></time></td>
+        </tr>
+<?php endforeach; ?>
+    </tbody>
+</table>
+
 <h2>Currently supported PHP versions</h2>
+
 <table>
     <thead>
         <tr>
