@@ -294,7 +294,7 @@ $features = array_map(function ($row) {
 </div>
 
         <footer>
-            <p>Maintainence sponsored by <a href="https://www.snapauth.app">SnapAuth</a>. Add passkey support to your app in minutes.</p>
+            <p>Maintenance sponsored by <a href="https://www.snapauth.app">SnapAuth</a>. Add passkey support to your app in minutes.</p>
             <p>This site is not affiliated with PHP.net or The PHP Group.</p>
         </footer>
         <?=$buildFooter?>
