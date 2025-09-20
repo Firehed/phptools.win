@@ -293,7 +293,10 @@ $features = array_map(function ($row) {
 </table>
 </div>
 
-        <footer>This site is not affiliated with PHP.net or The PHP Group</footer>
+        <footer>
+            <p>Maintainence sponsored by <a href="https://www.snapauth.app">SnapAuth</a>. Add passkey support to your app in minutes.</p>
+            <p>This site is not affiliated with PHP.net or The PHP Group.</p>
+        </footer>
         <?=$buildFooter?>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
         <script type="text/javascript" >
