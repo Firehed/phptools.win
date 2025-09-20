@@ -246,7 +246,7 @@ $features = array_map(function ($row) {
             <td><?=$feature->name?></td>
             <td><?=$feature->renderLinks()?></td>
             <?php foreach (Version::CURRENT as $version): ?>
-                <td><?=$feature->version->isSupportedInVersion($version) ? 'Y' : ''?>
+                <td><?=$feature->version->isSupportedInVersion($version) ? 'Y' : ''?></td>
             <?php endforeach; ?>
         </tr>
 <?php endforeach; ?>
