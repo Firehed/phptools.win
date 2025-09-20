@@ -890,6 +890,144 @@
   categories: []
   rfc: https://wiki.php.net/rfc/exit-as-function
 
+- name: Deprecations for PHP 8.5
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecations_php_8_5
+
+- name: Add locale for case insensitive grapheme functions
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/grapheme_add_locale_for_case_insensitive
+
+- name: #[\Deprecated] for traits
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecated_traits
+
+- name: FILTER_THROW_ON_FAILURE
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/filter_throw_on_failure
+
+- name: #[\DelayedTargetValidation] attribute
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/delayedtargetvalidation_attribute
+
+- name: Make OPcache a non-optional part of PHP
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/make_opcache_required
+
+- name: Clone with v2
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/clone_with_v2
+
+- name: Final Property Promotion
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/final_promotion
+
+- name: Pipe operator
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/pipe-operator-v3
+
+- name: Attributes on Constants
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/attributes-on-constants
+
+- name: Grapheme cluster for levenshtein, grapheme_levenshtein function
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/grapheme_levenshtein
+
+- name: Asymmetric Visibility for Static Properties
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/static-aviz
+
+- name: Marking return values as important
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/marking_return_value_as_important
+
+- name: Extend #[\Override] to target properties
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/override_properties
+
+- name: Add get_error_handler, get_exception_handler functions
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/get-error-exception-handler
+
+- name: Support Closures in constant expressions
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/closures_in_const_expr
+
+- name: First Class Callables in constant expressions
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/fcc_in_const_expr
+
+- name: Persistent curl share handle improvement
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/curl_share_persistence_improvement
+
+- name: Error backtraces v2
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/error_backtraces_v2
+
+- name: Change Directory class to behave like a resource object
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/directory-opaque-object
+
+- name: array_first() and array_last()
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/array_first_last
+
+- name: Cookies Having Independent Partitioned State (CHIPS)
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/chips
+
+- name: Add RFC3986 and WHATWG URL compliant API
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/url_parsing_api
+
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
 #   version: "8.3"
