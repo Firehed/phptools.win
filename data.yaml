@@ -890,6 +890,18 @@
   categories: []
   rfc: https://wiki.php.net/rfc/exit-as-function
 
+- name: Soft-deprecate `__sleep()` and `__wakeup()` magic methods
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/soft-deprecate-sleep-wakeup
+
+- name: Warnings for PHP 8.5
+  version: "8.5"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/warnings-php-8-5
+
 - name: Deprecations for PHP 8.5
   version: "8.5"
   docs: []
