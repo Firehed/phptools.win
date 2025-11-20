@@ -17,8 +17,8 @@ enum Version: string
     case v8_5 = '8.5';
     case v8_6 = '8.6';
 
-    public const CURRENT = [self::v8_2, self::v8_3, self::v8_4];
-    public const UPCOMING = self::v8_5;
+    public const CURRENT = [self::v8_3, self::v8_4, self::v8_5];
+    public const UPCOMING = self::v8_6;
 
     public function isAddedInCurrent(): bool
     {
