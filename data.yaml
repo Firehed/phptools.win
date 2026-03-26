@@ -1028,6 +1028,30 @@
   categories: []
   rfc: https://wiki.php.net/rfc/url_parsing_api
 
+- name: Add form feed (`\f`) to trim functions
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/trim_form_feed
+
+- name: Add `grapheme_strrev` function
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/grapheme_strrev
+
+- name: Add `clamp` function
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/clamp_v2
+
+- name: Add `isReadable`/`isWriteable` Reflection methods
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/isreadable-iswriteable
+
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
 #   version: "8.3"
