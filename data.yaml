@@ -1040,7 +1040,7 @@
   categories: []
   rfc: https://wiki.php.net/rfc/url_parsing_api
 
-- name: Add form feed (`\f`) to trim functions
+- name: Add form feed (`\\f`) to trim functions
   version: "8.6"
   docs: []
   categories: []
