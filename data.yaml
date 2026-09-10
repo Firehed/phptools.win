@@ -9,20 +9,23 @@
 - name: Native return types
   version: "7.0"
   rfc: https://wiki.php.net/rfc/return_types
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.declarations.php
   categories:
   - Type System
 
 - name: "`??` null coalesce operator"
   version: "7.0"
   rfc: https://wiki.php.net/rfc/isset_ternary
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.coalesce
   categories: []
 
 - name: Spaceship operator (`<=>`)
   version: "7.0"
   rfc: https://wiki.php.net/rfc/combined-comparison-operator
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.operators.comparison.php
   categories:
   - Syntax
 
@@ -35,7 +38,8 @@
 - name: anonymous classes
   version: "7.0"
   rfc: https://wiki.php.net/rfc/anonymous_classes
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.anonymous.php
   categories: []
 
 - name: Unicode string literals `\\u{0000aa}`
@@ -47,41 +51,48 @@
 - name: Group `use` imports
   version: "7.0"
   rfc: https://wiki.php.net/rfc/group_use_declarations
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.namespaces.importing.php
   categories: []
 
 - name: "`Throwable` type"
   version: "7.0"
   rfc: https://wiki.php.net/rfc/throwable-interface
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.throwable.php
   categories:
   - New interface
 
 - name: RNG functions `random_bytes` and `random_int`
   version: "7.0"
   rfc: https://wiki.php.net/rfc/easy_userland_csprng
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.random-bytes.php
+  - https://www.php.net/manual/en/function.random-int.php
   categories:
   - New function
 
 - name: "`?nullable` type"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/nullable_types
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.declarations.php#language.types.declarations.nullable
   categories:
   - Type System
 
 - name: "`void` return type"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/void_return_type
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.void.php
   categories:
   - Type System
 
 - name: "`iterable`"
   version: "7.1"
   rfc: https://wiki.php.net/rfc/iterable
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.iterable.php
   categories:
   - Type System
 
@@ -95,7 +106,8 @@
 - name: class constant visiblity
   version: "7.1"
   rfc: https://wiki.php.net/rfc/class_const_visibility
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.constants.php
   categories:
   - OOP
 
@@ -121,13 +133,15 @@
 - name: Async handling `pcntl_async_signals` function
   version: "7.1"
   rfc: https://wiki.php.net/rfc/async_signals
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.pcntl-async-signals.php
   categories: []
 
 - name: Native `object` typehint
   version: "7.2"
   rfc: https://wiki.php.net/rfc/object-typehint
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.object.php
   categories:
   - Type System
 
@@ -141,13 +155,15 @@
 - name: sodium in core
   version: "7.2"
   rfc: https://wiki.php.net/rfc/libsodium
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/book.sodium.php
   categories: []
 
 - name: argon2i pw hash
   version: "7.2"
   rfc: https://wiki.php.net/rfc/argon2_password_hash
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.password-hash.php
   categories: []
 
 - name: LSP-compatible parameter type widening
@@ -194,28 +210,32 @@
 - name: JSON constant `JSON_THROW_ON_ERROR`
   version: "7.3"
   rfc: https://wiki.php.net/rfc/json_throw_on_error
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/json.constants.php
   categories:
   - New constant
 
 - name: "`is_countable` function"
   version: "7.3"
   rfc: https://wiki.php.net/rfc/is-countable
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.is-countable.php
   categories:
   - New function
 
 - name: typed class properties
   version: "7.4"
   rfc: https://wiki.php.net/rfc/typed_properties_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.typed-properties
   categories:
   - Type System
 
 - name: Arrow functions (fn () => returnValue)
   version: "7.4"
   rfc: https://wiki.php.net/rfc/arrow_functions_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/functions.arrow.php
   categories:
   - Syntax
 
@@ -250,53 +270,61 @@
 - name: Added `WeakReference` class
   version: "7.4"
   rfc: https://wiki.php.net/rfc/weakrefs
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.weakreference.php
   categories:
   - New class
 
 - name: FFI
   version: "7.4"
   rfc: https://wiki.php.net/rfc/ffi
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/book.ffi.php
   categories: []
 
 - name: Opcache preload
   version: "7.4"
   rfc: https://wiki.php.net/rfc/preload
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/opcache.preloading.php
   categories: []
 
 - name: named arguments
   version: "8.0"
   rfc: https://wiki.php.net/rfc/named_params
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments
   categories:
   - Syntax
 
 - name: attributes - `#[AttributeClass]`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/attributes_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.attributes.php
   categories: []
 
 - name: constructor property promotion
   version: "8.0"
   rfc: https://wiki.php.net/rfc/constructor_promotion
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor.promotion
   categories:
   - Syntax
 
 - name: Union types - `Union|Type`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/union_types_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.type-system.php#language.types.type-system.composite.union
   categories:
   - Type System
 
 - name: "`match` expression"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/match_expression_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/control-structures.match.php
   categories:
   - Syntax
 
@@ -310,7 +338,8 @@
 - name: "`WeakMap` class"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/weak_maps
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.weakmap.php
   categories:
   - New class
 
@@ -323,7 +352,8 @@
 - name: "`static` return type"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/static_return_type
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.declarations.php
   categories:
   - Type System
 
@@ -337,7 +367,8 @@
 - name: "`Stringable` interface"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/stringable
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.stringable.php
   categories:
   - New interface
 
@@ -372,7 +403,8 @@
 - name: Native `mixed` type
   version: "8.0"
   rfc: https://wiki.php.net/rfc/mixed_type_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.mixed.php
   categories:
   - Type System
 
@@ -386,27 +418,32 @@
 - name: String functions `str_starts_with` and `str_ends_with`
   version: "8.0"
   rfc: https://wiki.php.net/rfc/add_str_starts_with_and_ends_with_functions
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.str-starts-with.php
+  - https://www.php.net/manual/en/function.str-ends-with.php
   categories:
   - New function
 
 - name: str_contains
   version: "8.0"
   rfc: https://wiki.php.net/rfc/str_contains
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.str-contains.php
   categories:
   - New function
 
 - name: JIT
   version: "8.0"
   rfc: https://wiki.php.net/rfc/jit
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.jit
   categories: []
 
 - name: "`get_debug_type` function"
   version: "8.0"
   rfc: https://wiki.php.net/rfc/get_debug_type
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.get-debug-type.php
   categories:
   - New function
 
@@ -453,33 +490,38 @@
 - name: enumerations
   version: "8.1"
   rfc: https://wiki.php.net/rfc/enumerations
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.enumerations.php
   categories: []
 
 - name: fibers
   version: "8.1"
   rfc: https://wiki.php.net/rfc/fibers
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.fibers.php
   categories:
   - New class
 
 - name: first-class callables - `$s = strlen(...)` instead of `$s = fn ($str) => strlen($str)`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/first_class_callable_syntax
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/functions.first_class_callable_syntax.php
   categories: []
 
 - name: Intersection types `A & B & C`
   version: "8.1"
   rfc: https://wiki.php.net/rfc/pure-intersection-types
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.type-system.php#language.types.type-system.composite.intersection
   categories:
   - Type System
 
 - name: Native `never` return type
   version: "8.1"
   rfc: https://wiki.php.net/rfc/noreturn_type
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.never.php
   categories:
   - Type System
 
@@ -492,7 +534,8 @@
 - name: "`readonly` properties"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/readonly_properties_v2
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties
   categories: []
 
 - name: Class constants can be `final`
@@ -504,7 +547,8 @@
 - name: "`array_is_list` function"
   version: "8.1"
   rfc: https://wiki.php.net/rfc/is_list
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.array-is-list.php
   categories:
   - New function
 
@@ -525,14 +569,16 @@
 - name: Add attribute `#[SensitiveParameter]`
   version: "8.2"
   rfc: https://wiki.php.net/rfc/redact_parameters_in_back_traces
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.sensitiveparameter.php
   categories:
   - New Attribute
 
 - name: Deprecate dynamic properties; add `#[AllowDynamicProperties]` attribute
   version: "8.2"
   rfc: https://wiki.php.net/rfc/deprecate_dynamic_properties
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.allowdynamicproperties.php
   categories:
   - New Attribute
 
@@ -559,7 +605,8 @@
 - name: Disjunctive Normal Form types - `(A&B)|C`
   version: "8.2"
   rfc: https://wiki.php.net/rfc/dnf_types
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.types.type-system.php#language.types.type-system.composite.dnf
   categories:
   - Type System
 
@@ -572,7 +619,8 @@
 - name: "`readonly` classes"
   version: "8.2"
   rfc: https://wiki.php.net/rfc/readonly_classes
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly
   categories: []
 
 # - name: Deprecations for PHP 8.3 (Created 2022-08-01)
@@ -594,7 +642,8 @@
 - name: Add `#[Override]` attribute
   version: "8.3"
   rfc: https://wiki.php.net/rfc/marking_overriden_methods
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.override.php
   categories:
   - New Attribute
 
@@ -650,7 +699,8 @@
 - name: "Add `mb_str_pad` function"
   version: "8.3"
   rfc: https://wiki.php.net/rfc/mb_str_pad
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.mb-str-pad.php
   categories:
   - New functions
 
@@ -680,14 +730,17 @@
 - name: "`DateException` and `DateError`"
   version: "8.3"
   rfc: https://wiki.php.net/rfc/datetime-exceptions
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.dateexception.php
+  - https://www.php.net/manual/en/class.dateerror.php
   categories:
   - New class
 
 - name: "Add `json_validate` function"
   version: "8.3"
   rfc: https://wiki.php.net/rfc/json_validate
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.json-validate.php
   categories:
   - New functions
 
@@ -724,7 +777,8 @@
 
 - name: Add `array_find` function
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.array-find.php
   categories: []
   rfc: https://wiki.php.net/rfc/array_find
 
@@ -772,7 +826,10 @@
 
 - name: Add `mb_trim`, `mb_ltrim`, and `mb_rtrim` functions
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.mb-trim.php
+  - https://www.php.net/manual/en/function.mb-ltrim.php
+  - https://www.php.net/manual/en/function.mb-rtrim.php
   categories: []
   rfc: https://wiki.php.net/rfc/mb_trim
 
@@ -808,31 +865,40 @@
 
 - name: Add `request_parse_body` function (RFC1867 for non-POST verbs)
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.request-parse-body.php
   categories: []
   rfc: https://wiki.php.net/rfc/rfc1867-non-post
 
 - name: Add `http_get_last_response_headers` and `http_clear_last_response_headers` functions
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.http-get-last-response-headers.php
+  - https://www.php.net/manual/en/function.http-clear-last-response-headers.php
   categories: []
   rfc: https://wiki.php.net/rfc/http-last-response-headers
 
 - name: Add `mb_ucfirst` and `mb_lcfirst` functions
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.mb-ucfirst.php
+  - https://www.php.net/manual/en/function.mb-lcfirst.php
   categories: []
   rfc: https://wiki.php.net/rfc/mb_ucfirst
 
 - name: Add `grapheme_str_split` function (improve handling of strings with emojis)
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.grapheme-str-split.php
   categories: []
   rfc: https://wiki.php.net/rfc/grapheme_str_split
 
 - name: Add `bcround`, `bcfloor`, `bcceil` to BC Math
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.bcround.php
+  - https://www.php.net/manual/en/function.bcfloor.php
+  - https://www.php.net/manual/en/function.bcceil.php
   categories: []
   rfc: https://wiki.php.net/rfc/adding_bcround_bcfloor_bcceil_to_bcmath
 
@@ -850,13 +916,15 @@
 
 - name: Add `#[Deprecated]` attribute and behavior
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.deprecated.php
   categories: []
   rfc: https://wiki.php.net/rfc/deprecated_attribute
 
 - name: Add property hooks
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.property-hooks.php
   categories: []
   rfc: https://wiki.php.net/rfc/property-hooks
   # also https://wiki.php.net/rfc/hook_improvements
@@ -874,13 +942,15 @@
   # new deprecations
 - name: Asymmetric visibility (`public private(set) string $foo = 'bar';`)
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility.asymmetric
   categories: []
   rfc: https://wiki.php.net/rfc/asymmetric-visibility-v2
 
 - name: Lazy object instantiation
   version: "8.4"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.lazy-objects.php
   categories: []
   rfc: https://wiki.php.net/rfc/lazy-objects
 
@@ -940,7 +1010,8 @@
 
 - name: Customize properties during `clone` ("Clone with")
   version: "8.5"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.oop5.cloning.php
   categories: []
   rfc: https://wiki.php.net/rfc/clone_with_v2
 
@@ -952,7 +1023,8 @@
 
 - name: Pipe operator (`mixed |> callable`)
   version: "8.5"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/language.operators.pipe.php
   categories: []
   rfc: https://wiki.php.net/rfc/pipe-operator-v3
 
@@ -988,7 +1060,9 @@
 
 - name: Add `get_error_handler()` and `get_exception_handler()` functions
   version: "8.5"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.get-error-handler.php
+  - https://www.php.net/manual/en/function.get-exception-handler.php
   categories: []
   rfc: https://wiki.php.net/rfc/get-error-exception-handler
 
@@ -1024,7 +1098,9 @@
 
 - name: Add `array_first()` and `array_last()`
   version: "8.5"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.array-first.php
+  - https://www.php.net/manual/en/function.array-last.php
   categories: []
   rfc: https://wiki.php.net/rfc/array_first_last
 
@@ -1036,7 +1112,8 @@
 
 - name: Add RFC3986 and WHATWG URL compliant API
   version: "8.5"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.uri.php
   categories: []
   rfc: https://wiki.php.net/rfc/url_parsing_api
 
