@@ -33,8 +33,6 @@ $features = array_map(function ($row) {
 }, $parsed);
 
 usort($features, fn (Feature $a, Feature $b) => version_compare($b->version->value, $a->version->value));
-
-$supportColumns = [...Version::CURRENT, Version::UPCOMING];
 ?>
 <!doctype HTML>
 <html>
@@ -93,33 +91,8 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
         table.features td.name {
           max-width: 32em;
         }
-        table.features td.since,
-        table.features th.support {
-          text-align: center;
-          white-space: nowrap;
-        }
-        table.features .dot {
-          display: inline-block;
-          width: 0.7em;
-          height: 0.7em;
-          border-radius: 50%;
-          vertical-align: middle;
-        }
-        table.features .dot.on {
-          background-color: var(--php-purple);
-        }
-        table.features .dot.off {
-          background-color: transparent;
-          border: 1px solid currentColor;
-          opacity: 0.25;
-        }
         table.features tr.upcoming {
           font-style: italic;
-        }
-        table.features tr.upcoming td.since::after {
-          content: " (upcoming)";
-          font-size: smaller;
-          opacity: 0.7;
         }
         table.features tr.group th {
           text-align: left;
@@ -135,10 +108,6 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
         /* Group rows are not part of the zebra pattern */
         table.features tr.group {
           background-color: var(--bg) !important;
-        }
-        table.features .support-cell {
-          text-align: center;
-          padding-inline: 0.35em;
         }
 
         .filter-bar {
@@ -331,45 +300,24 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
     <thead>
         <tr>
             <th>Feature</th>
-            <th>Since</th>
-            <th class="support" colspan="<?=count($supportColumns)?>">Support</th>
             <th>Links</th>
-        </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <?php foreach ($supportColumns as $v): ?>
-                <th class="support-cell"><?=$v->value?></th>
-            <?php endforeach; ?>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 <?php
 $lastVersion = null;
-$columnCount = 3 + count($supportColumns);
 foreach ($features as $feature):
     if ($feature->version !== $lastVersion):
         $lastVersion = $feature->version;
 ?>
         <tr class="group">
-            <th colspan="<?=$columnCount?>" scope="colgroup">
+            <th colspan="2" scope="colgroup">
                 PHP <?=$feature->version->value?><?=$feature->version->isUpcoming() ? ' (upcoming)' : ''?>
             </th>
         </tr>
 <?php endif; ?>
         <tr class="<?=$feature->version->isUpcoming() ? 'upcoming' : ''?>">
             <td class="name"><?=$feature->name?></td>
-            <td class="since"><?=$feature->version->value?></td>
-            <?php foreach ($supportColumns as $v): ?>
-                <td class="support-cell">
-                    <?php if ($feature->version->isSupportedInVersion($v)): ?>
-                        <span class="dot on" aria-label="supported in <?=$v->value?>"></span>
-                    <?php else: ?>
-                        <span class="dot off" aria-hidden="true"></span>
-                    <?php endif; ?>
-                </td>
-            <?php endforeach; ?>
             <td><?=$feature->renderLinks()?></td>
         </tr>
 <?php endforeach; ?>
