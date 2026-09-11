@@ -31,6 +31,8 @@ $features = array_map(function ($row) {
         docs: $row['docs'],
     );
 }, $parsed);
+
+usort($features, fn (Feature $a, Feature $b) => version_compare($b->version->value, $a->version->value));
 ?>
 <!doctype HTML>
 <html>
@@ -70,14 +72,68 @@ $features = array_map(function ($row) {
           background-color: var(--php-purple);
         }
         table thead th {
-          padding: 0 0.5em;
+          padding: 0.35em 0.6em;
+          color: #fff;
+          font-weight: 600;
         }
         table tbody td {
-          padding: 0.15em 0;
+          padding: 0.35em 0.6em;
         }
         /* zebra-stripe the table */
         table tr:nth-child(even) {
           background-color: var(--table-stripe);
+        }
+
+        table.features {
+          border-collapse: collapse;
+          max-width: 100%;
+        }
+        table.features td.name {
+          max-width: 32em;
+        }
+        table.features tr.group th {
+          text-align: left;
+          padding: 1em 0.6em 0.35em;
+          font-size: 1.1em;
+          color: var(--php-purple);
+          border-bottom: 1px solid var(--php-purple);
+          background-color: var(--bg);
+        }
+        table.features tr.group:first-child th {
+          padding-top: 0.35em;
+        }
+        /* Group rows are not part of the zebra pattern */
+        table.features tr.group {
+          background-color: var(--bg) !important;
+        }
+
+        .filter-bar {
+          margin-block: 1em;
+          width: min(100%, 32em);
+        }
+        .filter-bar input {
+          width: 100%;
+          padding: 0.5em 0.75em;
+          font: inherit;
+          border: 1px solid rgba(122, 134, 184, 0.6);
+          border-radius: 4px;
+          background: var(--bg);
+          color: var(--text);
+        }
+        .filter-bar input:focus {
+          outline: 2px solid var(--php-purple);
+          outline-offset: 1px;
+        }
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
         }
 
         h1, h2 {
@@ -230,63 +286,36 @@ $features = array_map(function ($row) {
     </tbody>
 </table>
 
-<h2>Currently supported PHP versions</h2>
+<h2>Features</h2>
 
-<table>
+<div class="filter-bar" id="filter-bar" hidden>
+    <label for="feature-filter" class="visually-hidden">Filter features</label>
+    <input type="search" id="feature-filter" placeholder="Filter features by name…" autocomplete="off">
+</div>
+
+<table class="features">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Links</th>
-<?=implode('', array_map(fn ($v) => "<th>$v->value</th>", Version::CURRENT))?>
-        </tr>
-    </thead>
-    <tbody>
-<?php foreach (array_filter($features, fn ($f) => $f->version->isAddedInCurrent()) as $feature): ?>
-        <tr>
-            <td><?=$feature->name?></td>
-            <td><?=$feature->renderLinks()?></td>
-            <?php foreach (Version::CURRENT as $version): ?>
-                <td><?=$feature->version->isSupportedInVersion($version) ? 'Y' : ''?></td>
-            <?php endforeach; ?>
-        </tr>
-<?php endforeach; ?>
-</tbody>
-</table>
-
-<h2>Next release (<?=Version::UPCOMING->value?>)</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
+            <th>Feature</th>
             <th>Links</th>
         </tr>
     </thead>
     <tbody>
-<?php foreach (array_filter($features, fn ($f) => $f->version->isUpcoming()) as $feature): ?>
-        <tr>
-            <td><?=$feature->name?></td>
-            <td><?=$feature->renderLinks()?></td>
+<?php
+$lastVersion = null;
+foreach ($features as $feature):
+    if ($feature->version !== $lastVersion):
+        $lastVersion = $feature->version;
+?>
+        <tr class="group">
+            <th colspan="2" scope="colgroup">
+                PHP <?=$feature->version->value?><?=$feature->version->isUpcoming() ? ' (upcoming)' : ''?>
+            </th>
         </tr>
-<?php endforeach; ?>
-    </tbody>
-</table>
-
-
-<h2>Previously-introduced</h2>
-<table>
-    <thead>
+<?php endif; ?>
         <tr>
-            <th>Name</th>
-            <th>Links</th>
-            <th>Introduced</th>
-        </tr>
-    </thead>
-    <tbody>
-<?php foreach (array_filter($features, fn ($f) => !($f->version->isAddedInCurrent() || $f->version->isUpcoming())) as $feature): ?>
-        <tr>
-            <td><?=$feature->name?></td>
+            <td class="name"><?=$feature->name?></td>
             <td><?=$feature->renderLinks()?></td>
-            <td><?=$feature->version->value?></td>
         </tr>
 <?php endforeach; ?>
     </tbody>
@@ -304,6 +333,34 @@ $features = array_map(function ($row) {
           document.querySelectorAll('code').forEach((el) => {
             hljs.highlightElement(el)
           })
+
+          const bar = document.getElementById('filter-bar');
+          const input = document.getElementById('feature-filter');
+          const rows = document.querySelectorAll('table.features tbody tr');
+          if (bar && input && rows.length) {
+            bar.hidden = false;
+            input.addEventListener('input', () => {
+              const q = input.value.trim().toLowerCase();
+              let currentGroup = null;
+              let currentGroupHasMatch = false;
+              const flushGroup = () => {
+                if (currentGroup) currentGroup.hidden = !currentGroupHasMatch;
+              };
+              for (const row of rows) {
+                if (row.classList.contains('group')) {
+                  flushGroup();
+                  currentGroup = row;
+                  currentGroupHasMatch = false;
+                  continue;
+                }
+                const name = row.querySelector('.name').textContent.toLowerCase();
+                const match = q === '' || name.includes(q);
+                row.hidden = !match;
+                if (match) currentGroupHasMatch = true;
+              }
+              flushGroup();
+            });
+          }
         })
         </script>
     </body>
