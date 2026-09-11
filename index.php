@@ -31,6 +31,10 @@ $features = array_map(function ($row) {
         docs: $row['docs'],
     );
 }, $parsed);
+
+usort($features, fn (Feature $a, Feature $b) => version_compare($b->version->value, $a->version->value));
+
+$supportColumns = [...Version::CURRENT, Version::UPCOMING];
 ?>
 <!doctype HTML>
 <html>
@@ -70,14 +74,56 @@ $features = array_map(function ($row) {
           background-color: var(--php-purple);
         }
         table thead th {
-          padding: 0 0.5em;
+          padding: 0.35em 0.6em;
+          color: #fff;
+          font-weight: 600;
         }
         table tbody td {
-          padding: 0.15em 0;
+          padding: 0.35em 0.6em;
         }
         /* zebra-stripe the table */
         table tr:nth-child(even) {
           background-color: var(--table-stripe);
+        }
+
+        table.features {
+          border-collapse: collapse;
+          max-width: 100%;
+        }
+        table.features td.name {
+          max-width: 32em;
+        }
+        table.features td.since,
+        table.features th.support {
+          text-align: center;
+          white-space: nowrap;
+        }
+        table.features .dot {
+          display: inline-block;
+          width: 0.7em;
+          height: 0.7em;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+        table.features .dot.on {
+          background-color: var(--php-purple);
+        }
+        table.features .dot.off {
+          background-color: transparent;
+          border: 1px solid currentColor;
+          opacity: 0.25;
+        }
+        table.features tr.upcoming {
+          font-style: italic;
+        }
+        table.features tr.upcoming td.since::after {
+          content: " (upcoming)";
+          font-size: smaller;
+          opacity: 0.7;
+        }
+        table.features .support-cell {
+          text-align: center;
+          padding-inline: 0.35em;
         }
 
         h1, h2 {
@@ -230,63 +276,40 @@ $features = array_map(function ($row) {
     </tbody>
 </table>
 
-<h2>Currently supported PHP versions</h2>
+<h2>Features</h2>
 
-<table>
+<table class="features">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Feature</th>
+            <th>Since</th>
+            <th class="support" colspan="<?=count($supportColumns)?>">Support</th>
             <th>Links</th>
-<?=implode('', array_map(fn ($v) => "<th>$v->value</th>", Version::CURRENT))?>
         </tr>
-    </thead>
-    <tbody>
-<?php foreach (array_filter($features, fn ($f) => $f->version->isAddedInCurrent()) as $feature): ?>
         <tr>
-            <td><?=$feature->name?></td>
-            <td><?=$feature->renderLinks()?></td>
-            <?php foreach (Version::CURRENT as $version): ?>
-                <td><?=$feature->version->isSupportedInVersion($version) ? 'Y' : ''?></td>
+            <th></th>
+            <th></th>
+            <?php foreach ($supportColumns as $v): ?>
+                <th class="support-cell"><?=$v->value?></th>
             <?php endforeach; ?>
-        </tr>
-<?php endforeach; ?>
-</tbody>
-</table>
-
-<h2>Next release (<?=Version::UPCOMING->value?>)</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Links</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-<?php foreach (array_filter($features, fn ($f) => $f->version->isUpcoming()) as $feature): ?>
-        <tr>
-            <td><?=$feature->name?></td>
+<?php foreach ($features as $feature): ?>
+        <tr class="<?=$feature->version->isUpcoming() ? 'upcoming' : ''?>">
+            <td class="name"><?=$feature->name?></td>
+            <td class="since"><?=$feature->version->value?></td>
+            <?php foreach ($supportColumns as $v): ?>
+                <td class="support-cell">
+                    <?php if ($feature->version->isSupportedInVersion($v)): ?>
+                        <span class="dot on" aria-label="supported in <?=$v->value?>"></span>
+                    <?php else: ?>
+                        <span class="dot off" aria-hidden="true"></span>
+                    <?php endif; ?>
+                </td>
+            <?php endforeach; ?>
             <td><?=$feature->renderLinks()?></td>
-        </tr>
-<?php endforeach; ?>
-    </tbody>
-</table>
-
-
-<h2>Previously-introduced</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Links</th>
-            <th>Introduced</th>
-        </tr>
-    </thead>
-    <tbody>
-<?php foreach (array_filter($features, fn ($f) => !($f->version->isAddedInCurrent() || $f->version->isUpcoming())) as $feature): ?>
-        <tr>
-            <td><?=$feature->name?></td>
-            <td><?=$feature->renderLinks()?></td>
-            <td><?=$feature->version->value?></td>
         </tr>
 <?php endforeach; ?>
     </tbody>
