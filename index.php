@@ -121,6 +121,21 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
           font-size: smaller;
           opacity: 0.7;
         }
+        table.features tr.group th {
+          text-align: left;
+          padding: 1em 0.6em 0.35em;
+          font-size: 1.1em;
+          color: var(--php-purple);
+          border-bottom: 1px solid var(--php-purple);
+          background-color: var(--bg);
+        }
+        table.features tr.group:first-child th {
+          padding-top: 0.35em;
+        }
+        /* Group rows are not part of the zebra pattern */
+        table.features tr.group {
+          background-color: var(--bg) !important;
+        }
         table.features .support-cell {
           text-align: center;
           padding-inline: 0.35em;
@@ -330,7 +345,19 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
         </tr>
     </thead>
     <tbody>
-<?php foreach ($features as $feature): ?>
+<?php
+$lastVersion = null;
+$columnCount = 3 + count($supportColumns);
+foreach ($features as $feature):
+    if ($feature->version !== $lastVersion):
+        $lastVersion = $feature->version;
+?>
+        <tr class="group">
+            <th colspan="<?=$columnCount?>" scope="colgroup">
+                PHP <?=$feature->version->value?><?=$feature->version->isUpcoming() ? ' (upcoming)' : ''?>
+            </th>
+        </tr>
+<?php endif; ?>
         <tr class="<?=$feature->version->isUpcoming() ? 'upcoming' : ''?>">
             <td class="name"><?=$feature->name?></td>
             <td class="since"><?=$feature->version->value?></td>
@@ -369,10 +396,24 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
             bar.hidden = false;
             input.addEventListener('input', () => {
               const q = input.value.trim().toLowerCase();
+              let currentGroup = null;
+              let currentGroupHasMatch = false;
+              const flushGroup = () => {
+                if (currentGroup) currentGroup.hidden = !currentGroupHasMatch;
+              };
               for (const row of rows) {
+                if (row.classList.contains('group')) {
+                  flushGroup();
+                  currentGroup = row;
+                  currentGroupHasMatch = false;
+                  continue;
+                }
                 const name = row.querySelector('.name').textContent.toLowerCase();
-                row.hidden = q !== '' && !name.includes(q);
+                const match = q === '' || name.includes(q);
+                row.hidden = !match;
+                if (match) currentGroupHasMatch = true;
               }
+              flushGroup();
             });
           }
         })
