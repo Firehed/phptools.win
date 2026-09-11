@@ -1147,6 +1147,132 @@
   categories: []
   rfc: https://wiki.php.net/rfc/isreadable-iswriteable
 
+- name: Partial function application
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/partial_function_application_v2
+
+- name: Partial function application — optional parameter handling
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/partial_function_application_optional_placeholder
+
+- name: "`Duration` class"
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/duration_class
+
+- name: Polling API
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/poll_api
+
+- name: Stream error handling improvements
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/stream_errors
+
+- name: Allow object property writes on objects referenced by constants
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/const_object_property_write
+
+- name: "`#[\\Override]` for class constants"
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/override_constants
+
+- name: Readonly property defaults
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/readonly_property_defaults
+
+- name: DocComments for function parameters
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/parameter-doccomments
+
+- name: Debugable enums
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/debugable-enums
+
+- name: "`SortDirection` enum"
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/sort_direction_enum
+
+- name: Display function arguments in errors
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/display_error_function_args
+
+- name: Closure optimizations (stateless closure caching)
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/closure-optimizations
+
+- name: Secure session configuration defaults
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/session_security_defaults
+
+- name: Add `pack()`/`unpack()` endianness modifiers for floating-point numbers
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/pack-unpack-float-endianness-modifier
+
+- name: Add `pack()`/`unpack()` endianness support for signed integers
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/pack-unpack-endianness-signed-integers-support
+
+- name: Add `mysqli_quote_string` function
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/mysqli_quote_string
+
+- name: Add `Locale::getDisplayKeyword` and `Locale::getDisplayKeywordValue`
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/getdisplaykeyword_and_getdisplaykeywordvalue
+
+- name: Deprecate returning values from `__construct()` and `__destruct()`
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecate-return-value-from-construct
+
+- name: Limit maximum number of stream filter chains
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/limit-maximum-number-of-filter-chains
+
+- name: Deprecate mbregex functions (end of Oniguruma)
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/eol-oniguruma
+
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
 #   version: "8.3"
