@@ -126,6 +126,35 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
           padding-inline: 0.35em;
         }
 
+        .filter-bar {
+          margin-block: 1em;
+          width: min(100%, 32em);
+        }
+        .filter-bar input {
+          width: 100%;
+          padding: 0.5em 0.75em;
+          font: inherit;
+          border: 1px solid rgba(122, 134, 184, 0.6);
+          border-radius: 4px;
+          background: var(--bg);
+          color: var(--text);
+        }
+        .filter-bar input:focus {
+          outline: 2px solid var(--php-purple);
+          outline-offset: 1px;
+        }
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
         h1, h2 {
             margin-block: 1rem;
             text-align: center;
@@ -278,6 +307,11 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
 
 <h2>Features</h2>
 
+<div class="filter-bar" id="filter-bar" hidden>
+    <label for="feature-filter" class="visually-hidden">Filter features</label>
+    <input type="search" id="feature-filter" placeholder="Filter features by name…" autocomplete="off">
+</div>
+
 <table class="features">
     <thead>
         <tr>
@@ -327,6 +361,20 @@ $supportColumns = [...Version::CURRENT, Version::UPCOMING];
           document.querySelectorAll('code').forEach((el) => {
             hljs.highlightElement(el)
           })
+
+          const bar = document.getElementById('filter-bar');
+          const input = document.getElementById('feature-filter');
+          const rows = document.querySelectorAll('table.features tbody tr');
+          if (bar && input && rows.length) {
+            bar.hidden = false;
+            input.addEventListener('input', () => {
+              const q = input.value.trim().toLowerCase();
+              for (const row of rows) {
+                const name = row.querySelector('.name').textContent.toLowerCase();
+                row.hidden = q !== '' && !name.includes(q);
+              }
+            });
+          }
         })
         </script>
     </body>
