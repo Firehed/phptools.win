@@ -91,9 +91,6 @@ usort($features, fn (Feature $a, Feature $b) => version_compare($b->version->val
         table.features td.name {
           max-width: 32em;
         }
-        table.features tr.upcoming {
-          font-style: italic;
-        }
         table.features tr.group th {
           text-align: left;
           padding: 1em 0.6em 0.35em;
@@ -316,7 +313,7 @@ foreach ($features as $feature):
             </th>
         </tr>
 <?php endif; ?>
-        <tr class="<?=$feature->version->isUpcoming() ? 'upcoming' : ''?>">
+        <tr>
             <td class="name"><?=$feature->name?></td>
             <td><?=$feature->renderLinks()?></td>
         </tr>
