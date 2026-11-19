@@ -1300,6 +1300,24 @@
   categories: []
   rfc: https://wiki.php.net/rfc/deprecations_php_8_6
 
+- name: Add `IntlRelativeDateTimeFormatter` class
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/reldateformatter
+
+- name: Case-insensitive extension names in `ini_get_all()`
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/case_insensitive_ini_get_all
+
+- name: Throw exception for invalid characters in number base functions
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/throw_error_for_invalid_characters_for_number_base
+
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
 #   version: "8.3"
