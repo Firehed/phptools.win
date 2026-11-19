@@ -16,9 +16,10 @@ enum Version: string
     case v8_4 = '8.4';
     case v8_5 = '8.5';
     case v8_6 = '8.6';
+    case v8_7 = '8.7';
 
-    public const CURRENT = [self::v8_3, self::v8_4, self::v8_5];
-    public const UPCOMING = self::v8_6;
+    public const CURRENT = [self::v8_4, self::v8_5, self::v8_6];
+    public const UPCOMING = self::v8_7;
 
     public function isAddedInCurrent(): bool
     {
@@ -46,6 +47,7 @@ enum Version: string
             self::v8_3 => new DateTimeImmutable('2025-12-31'),
             self::v8_4 => new DateTimeImmutable('2026-12-31'),
             self::v8_5 => new DateTimeImmutable('2027-12-31'),
+            self::v8_6 => new DateTimeImmutable('2028-12-31'),
             default => null,
         };
     }
@@ -61,6 +63,7 @@ enum Version: string
             self::v8_3 => new DateTimeImmutable('2027-12-31'),
             self::v8_4 => new DateTimeImmutable('2028-12-31'),
             self::v8_5 => new DateTimeImmutable('2029-12-31'),
+            self::v8_6 => new DateTimeImmutable('2030-12-31'),
             default => null,
         };
     }
