@@ -1273,6 +1273,12 @@
   categories: []
   rfc: https://wiki.php.net/rfc/eol-oniguruma
 
+- name: SNMP improvements (more SNMPv3 security protocols, MIB reset, output controls)
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/snmp_improvements_2026
+
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
 #   version: "8.3"
