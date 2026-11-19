@@ -1118,7 +1118,7 @@
   rfc: https://wiki.php.net/rfc/url_parsing_api
 
 - name: TLS session resumption support for streams
-  version: "8.5"
+  version: "8.6"
   docs: []
   categories: []
   rfc: https://wiki.php.net/rfc/tls_session_resumption_api
