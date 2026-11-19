@@ -1137,19 +1137,23 @@
 
 - name: Add `clamp` function
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.clamp.php
   categories: []
   rfc: https://wiki.php.net/rfc/clamp_v2
 
 - name: Add `isReadable`/`isWriteable` Reflection methods
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/reflectionproperty.isreadable.php
+  - https://www.php.net/manual/en/reflectionproperty.iswritable.php
   categories: []
   rfc: https://wiki.php.net/rfc/isreadable-iswriteable
 
 - name: Partial function application
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/functions.partial-application.php
   categories: []
   rfc: https://wiki.php.net/rfc/partial_function_application_v2
 
@@ -1161,7 +1165,8 @@
 
 - name: "`Duration` class"
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.time-duration.php
   categories: []
   rfc: https://wiki.php.net/rfc/duration_class
 
@@ -1173,7 +1178,9 @@
 
 - name: Stream error handling improvements
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.stream-last-errors.php
+  - https://www.php.net/manual/en/class.streamexception.php
   categories: []
   rfc: https://wiki.php.net/rfc/stream_errors
 
@@ -1209,7 +1216,8 @@
 
 - name: "`SortDirection` enum"
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/enum.sortdirection.php
   categories: []
   rfc: https://wiki.php.net/rfc/sort_direction_enum
 
@@ -1245,7 +1253,8 @@
 
 - name: Add `mysqli_quote_string` function
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/mysqli.quote-string.php
   categories: []
   rfc: https://wiki.php.net/rfc/mysqli_quote_string
 
