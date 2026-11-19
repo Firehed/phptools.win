@@ -1118,7 +1118,7 @@
   rfc: https://wiki.php.net/rfc/url_parsing_api
 
 - name: TLS session resumption support for streams
-  version: "8.5"
+  version: "8.6"
   docs: []
   categories: []
   rfc: https://wiki.php.net/rfc/tls_session_resumption_api
@@ -1137,19 +1137,23 @@
 
 - name: Add `clamp` function
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.clamp.php
   categories: []
   rfc: https://wiki.php.net/rfc/clamp_v2
 
 - name: Add `isReadable`/`isWriteable` Reflection methods
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/reflectionproperty.isreadable.php
+  - https://www.php.net/manual/en/reflectionproperty.iswritable.php
   categories: []
   rfc: https://wiki.php.net/rfc/isreadable-iswriteable
 
 - name: Partial function application
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/functions.partial-application.php
   categories: []
   rfc: https://wiki.php.net/rfc/partial_function_application_v2
 
@@ -1161,7 +1165,8 @@
 
 - name: "`Duration` class"
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/class.time-duration.php
   categories: []
   rfc: https://wiki.php.net/rfc/duration_class
 
@@ -1173,7 +1178,9 @@
 
 - name: Stream error handling improvements
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/function.stream-last-errors.php
+  - https://www.php.net/manual/en/class.streamexception.php
   categories: []
   rfc: https://wiki.php.net/rfc/stream_errors
 
@@ -1209,7 +1216,8 @@
 
 - name: "`SortDirection` enum"
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/enum.sortdirection.php
   categories: []
   rfc: https://wiki.php.net/rfc/sort_direction_enum
 
@@ -1245,7 +1253,8 @@
 
 - name: Add `mysqli_quote_string` function
   version: "8.6"
-  docs: []
+  docs:
+  - https://www.php.net/manual/en/mysqli.quote-string.php
   categories: []
   rfc: https://wiki.php.net/rfc/mysqli_quote_string
 
@@ -1272,6 +1281,42 @@
   docs: []
   categories: []
   rfc: https://wiki.php.net/rfc/eol-oniguruma
+
+- name: SNMP improvements (more SNMPv3 security protocols, MIB reset, output controls)
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/snmp_improvements_2026
+
+- name: URI extension follow-ups (URI builders, URI and host type detection, percent-encoding)
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/uri_followup
+
+- name: Deprecations for PHP 8.6
+  version: "8.6"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/deprecations_php_8_6
+
+- name: Add `IntlRelativeDateTimeFormatter` class
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/reldateformatter
+
+- name: Case-insensitive extension names in `ini_get_all()`
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/case_insensitive_ini_get_all
+
+- name: Throw exception for invalid characters in number base functions
+  version: "8.7"
+  docs: []
+  categories: []
+  rfc: https://wiki.php.net/rfc/throw_error_for_invalid_characters_for_number_base
 
       # This has a lot of surafce area
 # - name: Deprecate functions with overloaded signatures (Discussion started: 2023-04-27, Voting started: 2023-06-26, Voting ended: 2023-07-10)
